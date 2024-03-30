@@ -1,0 +1,2 @@
+Spellcheck results for file: file2.txt
+Total misspelled words: 3
