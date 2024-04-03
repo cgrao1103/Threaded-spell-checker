@@ -16,6 +16,8 @@ struct WordCount {
 int total_files_processed = 0;
 int total_spelling_errors = 0;
 struct WordCount misspellings_summary[MAX_WORDS];
+int found_in_dictionary = 0;
+
 
 // Mutex and condition variable for synchronization
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -59,7 +61,7 @@ void *spellchecker_task(void *args) {
     char word[MAX_WORD_LENGTH];
     while (fscanf(file, "%s", word) == 1) {
         // Spellcheck logic here
-        int found_in_dictionary = 0;
+        
         
         // Assuming spellcheck logic here: If the word is not in the dictionary, count it as misspelled
         // In a real spellchecker, you would use a more sophisticated algorithm
